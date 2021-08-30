@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-biglietto-treno-form</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="formWrapper">
+
+            <div class="dataInputsWrapper">
+                <div class="inputWrapper">
+                    <label for="nomeCognomeInput">inserisci nome e cognome</label>
+                    <input type="text" name="nomeCognomePasseggero" id="nomeCognomeInput" placeholder="nome cognome">                
+                </div>
+
+                <div class="inputWrapper">
+                    <label for="chilometriDaPercorrere">inserisci i chilometri che vuoi percorrere</label>
+                    <input type="number" name="chilometriDaPercorrere" id="chilometriDaPercorrere" placeholder="chilometri">                
+                </div>
+
+                <div class="inputWrapper">
+                    <label for="etaInput">categoria di età</label>
+                    <select name="etaPasseggero" id="etaInput">
+                        <option value="">--scegli un'opzione--</option>
+                        <option value="minorenne">minorenne</option>
+                        <option value="maggiorenne">maggiorenne</option>
+                        <option value="over">over 65</option>
+                    </select>                
+                </div>                
+            </div>
+
+            <div class="buttonsWrapper">
+                <button id="stampaBiglietto">calcola</button>
+                <button id="annulla">annulla</button>
+            </div>            
+
+        </div>
+
+        <div class="biglietto">
+            <h2>il tuo biglietto</h2>
+
+            <div>nome passeggiero:  <span id="nomePasseggiero"></span></div>
+            <div>tipologia di biglietto:  <span id="tipoBiglietto"></span></div>
+            <div>prezzo del biglietto:  <span id="prezzoBiglietto"></span></div>
+        </div>
+
+    </div>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>
