@@ -83,7 +83,7 @@ document.getElementById("stampaBiglietto").addEventListener('click', ()=> {
 document.getElementById("annulla").addEventListener('click', ()=> {
 
     // nascondi biglietto
-    document.querySelector(".biglietto").classList.remove("active");
+    document.querySelector(".elencoBigliettiWrapper").classList.remove("active");
 
     // reset input values
     document.getElementById("etaInput").value = "";
