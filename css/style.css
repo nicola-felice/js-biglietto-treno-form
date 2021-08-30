@@ -5,12 +5,24 @@
     box-sizing: border-box;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+}
+
 body {
     background-color: #b91450;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* _______ COMMON _______ */
 h1, 
 h2 {
     color: white;
@@ -36,6 +48,18 @@ label {
     color: #b91450;
     font-weight: 600;
 }
+input,
+select {
+    padding: .35rem .5rem;
+    border-radius: .25rem;
+    border: 1px #b91450 solid;
+    text-align: center;
+
+    font-size: 1rem;
+}
+/* _______ END COMMON _______ */
+
+
 
 /* _______ FORM WRAPPER _______ */
 .formWrapper {
@@ -54,6 +78,7 @@ label {
     margin-bottom: 2rem;
 }
 /* _______ END FORM WRAPPER _______ */
+
 
 
 /* _______ BIGLIETTO  _______ */

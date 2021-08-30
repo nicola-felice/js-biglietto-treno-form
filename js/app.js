@@ -18,36 +18,64 @@ function calcoloPrezzoBiglietto(km, eta) {
 }
 
 
+// input validation
+function inputIsValid(nome, eta, km) {
+
+    // check if the input name is valid
+    if (!isNaN(parseInt(nome)) || nome == "") {
+        return false;
+    }
+
+    // check if the km input is valid
+    if (isNaN(km) || km == "") {
+        return false;
+    }
+
+    if (eta == "") {
+        return false;
+    }
+
+    return true;
+}
+
+
 // stampa biglietto
 document.getElementById("stampaBiglietto").addEventListener('click', ()=> {
 
     // salvo dati in input
-    let nomeCognomePasseggero = document.getElementById("nomeCognomeInput").value;
-    let chilometriDaPercorrere = document.getElementById("chilometriDaPercorrere").value;
-    let etaPasseggero = document.getElementById("etaInput").value;
+    const nomeCognomePasseggero = document.getElementById("nomeCognomeInput").value;
+    const chilometriDaPercorrere = parseInt(document.getElementById("chilometriDaPercorrere").value);
+    const etaPasseggero = document.getElementById("etaInput").value; 
 
-    // stampo nome sul biglietto
-    document.getElementById("nomePasseggiero").innerHTML = nomeCognomePasseggero;
+    if (inputIsValid(nomeCognomePasseggero, etaPasseggero, chilometriDaPercorrere)) {
+        // stampo nome sul biglietto
+        document.getElementById("nomePasseggiero").innerHTML = nomeCognomePasseggero;
 
-    // calcolo e stampo il prezzo biglietto
-    document.getElementById("prezzoBiglietto").innerHTML = `${calcoloPrezzoBiglietto(chilometriDaPercorrere, etaPasseggero)} €`;
+        // calcolo e stampo il prezzo biglietto
+        document.getElementById("prezzoBiglietto").innerHTML = `${calcoloPrezzoBiglietto(chilometriDaPercorrere, etaPasseggero)} €`;
 
-    // stampo che tipologia di biglietto è
-    if (etaPasseggero == "minorenne" || etaPasseggero == "over") {
-        var tipologiaBiglietto = "ridotto";
+        // stampo che tipologia di biglietto è
+        if (etaPasseggero == "minorenne" || etaPasseggero == "over") {
+            var tipologiaBiglietto = "ridotto";
+        } else {
+            var tipologiaBiglietto = "standard";
+        }
+        document.getElementById("tipoBiglietto").innerHTML = `biglietto ${tipologiaBiglietto}`;
+
+        // calcolo e stampo la carrozza
+        document.getElementById("numeroCarrozza").innerHTML = Math.floor(Math.random() * 9) + 1;
+
+        // calcolo e stampo il codice CP
+        document.getElementById("codiceCP").innerHTML = Math.floor(Math.random() * 9999) + 90000;
+
+        // display biglietto
+        document.querySelector(".elencoBigliettiWrapper").classList.add("active");     
+
     } else {
-        var tipologiaBiglietto = "standard";
+        document.querySelector(".elencoBigliettiWrapper").classList.remove("active");     
+        alert('ATTENZIONE!! inserisci i dati correttamente');
     }
-    document.getElementById("tipoBiglietto").innerHTML = `biglietto ${tipologiaBiglietto}`;
 
-    // calcolo e stampo la carrozza
-    document.getElementById("numeroCarrozza").innerHTML = Math.floor(Math.random() * 9) + 1;
-
-    // calcolo e stampo il codice CP
-    document.getElementById("codiceCP").innerHTML = Math.floor(Math.random() * 9999) + 90000;
-
-    // display biglietto
-    document.querySelector(".elencoBigliettiWrapper").classList.add("active");
 });
 
 
