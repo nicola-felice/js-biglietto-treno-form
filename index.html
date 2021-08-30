@@ -9,21 +9,23 @@
 </head>
 <body>
     <div class="container">
+        <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+
         <div class="formWrapper">
 
             <div class="dataInputsWrapper">
                 <div class="inputWrapper">
-                    <label for="nomeCognomeInput">inserisci nome e cognome</label>
+                    <label for="nomeCognomeInput">Nome Cognome</label>
                     <input type="text" name="nomeCognomePasseggero" id="nomeCognomeInput" placeholder="nome cognome">                
                 </div>
 
                 <div class="inputWrapper">
-                    <label for="chilometriDaPercorrere">inserisci i chilometri che vuoi percorrere</label>
+                    <label for="chilometriDaPercorrere">Km da percorrere</label>
                     <input type="number" name="chilometriDaPercorrere" id="chilometriDaPercorrere" placeholder="chilometri">                
                 </div>
 
                 <div class="inputWrapper">
-                    <label for="etaInput">categoria di età</label>
+                    <label for="etaInput">Fascia d'età</label>
                     <select name="etaPasseggero" id="etaInput">
                         <option value="">--scegli un'opzione--</option>
                         <option value="minorenne">minorenne</option>
@@ -34,19 +36,53 @@
             </div>
 
             <div class="buttonsWrapper">
-                <button id="stampaBiglietto">calcola</button>
-                <button id="annulla">annulla</button>
+                <button id="stampaBiglietto">Calcola</button>
+                <button id="annulla">Annulla</button>
             </div>            
 
         </div>
 
-        <div class="biglietto">
-            <h2>il tuo biglietto</h2>
+        <h2>IL TUO BIGLIETTO</h2>
 
-            <div>nome passeggiero:  <span id="nomePasseggiero"></span></div>
-            <div>tipologia di biglietto:  <span id="tipoBiglietto"></span></div>
-            <div>prezzo del biglietto:  <span id="prezzoBiglietto"></span></div>
+        <div class="elencoBigliettiWrapper">
+
+            <h3>DETTAGLIO PASSEGGERI</h3>
+            <hr>
+
+            <div class="biglietto">
+
+                <div class="nomePasseggieroWrapper">
+                    NOME PASSEGGERO <br>
+                    <span id="nomePasseggiero"></span>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Offerta</th>
+                            <th>Carrozza</th>
+                            <th>Codice CP</th>
+                            <th>Costo Biglietto</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td id="tipoBiglietto"></td>
+                            <td id="numeroCarrozza"></td>
+                            <td id="codiceCP"></td>
+                            <td id="prezzoBiglietto"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            
+            <hr>            
         </div>
+
+        
 
     </div>
 

@@ -30,20 +30,24 @@ document.getElementById("stampaBiglietto").addEventListener('click', ()=> {
     document.getElementById("nomePasseggiero").innerHTML = nomeCognomePasseggero;
 
     // calcolo e stampo il prezzo biglietto
-    document.getElementById("prezzoBiglietto").innerHTML = calcoloPrezzoBiglietto(chilometriDaPercorrere, etaPasseggero);
+    document.getElementById("prezzoBiglietto").innerHTML = `${calcoloPrezzoBiglietto(chilometriDaPercorrere, etaPasseggero)} €`;
 
-    // stampo che tipologia di bilietto è
+    // stampo che tipologia di biglietto è
     if (etaPasseggero == "minorenne" || etaPasseggero == "over") {
         var tipologiaBiglietto = "ridotto";
     } else {
         var tipologiaBiglietto = "standard";
     }
-    document.getElementById("tipoBiglietto").innerHTML = tipologiaBiglietto;
+    document.getElementById("tipoBiglietto").innerHTML = `biglietto ${tipologiaBiglietto}`;
 
+    // calcolo e stampo la carrozza
+    document.getElementById("numeroCarrozza").innerHTML = Math.floor(Math.random() * 9) + 1;
+
+    // calcolo e stampo il codice CP
+    document.getElementById("codiceCP").innerHTML = Math.floor(Math.random() * 9999) + 90000;
 
     // display biglietto
-    document.querySelector(".biglietto").classList.add("active");
-
+    document.querySelector(".elencoBigliettiWrapper").classList.add("active");
 });
 
 
