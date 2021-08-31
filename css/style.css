@@ -5,17 +5,6 @@
     box-sizing: border-box;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-      -webkit-appearance: none; 
-      margin: 0; 
-}
-input[type=number] { 
-    -moz-appearance: textfield;
-    appearance: textfield;
-    margin: 0; 
-}
-
 body {
     background-color: #b91450;
     text-align: center;
@@ -57,6 +46,16 @@ select {
 
     font-size: 1rem;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+}
 /* _______ END COMMON _______ */
 
 
@@ -66,6 +65,7 @@ select {
     background-color: white;
     padding: 2rem;
     border-radius: .5rem;
+    box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.3);
 }
 .dataInputsWrapper {
     display: flex;
@@ -102,13 +102,13 @@ select {
     font-weight: 600;
     font-size: 1.25rem;
 }
-table {
+.biglietto table {
     text-align: left;
     flex-grow: 1;
     padding: .75rem 2rem;
 }
-td,
-th {
+.biglietto td,
+.biglietto th {
     padding: .5rem;
 }
 /* _______ END BIGLIETTO  _______ */
