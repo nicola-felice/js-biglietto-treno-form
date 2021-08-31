@@ -4,14 +4,14 @@ function calcoloPrezzoBiglietto(km, eta) {
     // calcolare il prezzo totale del viaggio, secondo queste regole: il prezzo del biglietto è definito in base ai km (0.21 € al km)
     let prezzoBiglietto = km * 0.21;
 
-    // va applicato uno sconto del 20% per i minorenni e del 40% per gli over 65.
+    // va applicato uno sconto per i minorenni e per gli over 65.
     if (eta == "minorenne") {
-        const valoreSconto = prezzoBiglietto * 0.2;
-        prezzoBiglietto -= valoreSconto;
+        // sconto 20%
+        prezzoBiglietto *= 0.8;
 
     } else if (eta == "over") {
-        const valoreSconto = prezzoBiglietto * 0.4;
-        prezzoBiglietto -= valoreSconto;
+        // sconto 40%
+        prezzoBiglietto *= 0.6;
     }   
 
     return prezzoBiglietto.toFixed(2);
@@ -31,6 +31,7 @@ function inputIsValid(nome, eta, km) {
         return false;
     }
 
+    // check if eta empty
     if (eta == "") {
         return false;
     }
